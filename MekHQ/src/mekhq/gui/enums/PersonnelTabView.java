@@ -32,7 +32,7 @@ public enum PersonnelTabView {
     TACTICAL_SKILLS("PersonnelTabView.TACTICAL_SKILLS.text", "PersonnelTabView.TACTICAL_SKILLS.toolTipText"),
     TECHNICAL_SKILLS("PersonnelTabView.TECHNICAL_SKILLS.text", "PersonnelTabView.TECHNICAL_SKILLS.toolTipText"),
     ADMINISTRATIVE_SKILLS("PersonnelTabView.ADMINISTRATIVE_SKILLS.text", "PersonnelTabView.ADMINISTRATIVE_SKILLS.toolTipText"),
-    BIOGRAPHICAL("PersonnelTabView.BIOGRAPHICAL.text", "PersonnelTabView.BIOGRAPHICAL.toolTipText"),
+    BIOGRAPHY("PersonnelTabView.BIOGRAPHICAL.text", "PersonnelTabView.BIOGRAPHICAL.toolTipText"),
     FLUFF("PersonnelTabView.FLUFF.text", "PersonnelTabView.FLUFF.toolTipText"),
     DATES("PersonnelTabView.DATES.text", "PersonnelTabView.DATES.toolTipText"),
     OTHER("PersonnelTabView.OTHER.text", "PersonnelTabView.OTHER.toolTipText");
@@ -88,7 +88,7 @@ public enum PersonnelTabView {
     }
 
     public boolean isBiographical() {
-        return this == BIOGRAPHICAL;
+        return this == BIOGRAPHY;
     }
 
     public boolean isFluff() {

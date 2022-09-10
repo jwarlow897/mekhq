@@ -791,7 +791,7 @@ public enum PersonnelTableModelColumn {
                         return false;
                 }
             }
-            case BIOGRAPHICAL: {
+            case BIOGRAPHY: {
                 switch (this) {
                     case RANK:
                     case FIRST_NAME:

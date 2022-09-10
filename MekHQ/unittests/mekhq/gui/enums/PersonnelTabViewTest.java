@@ -127,7 +127,7 @@ public class PersonnelTabViewTest {
     @Test
     public void testIsBiographical() {
         for (final PersonnelTabView personnelTabView : views) {
-            if (personnelTabView == PersonnelTabView.BIOGRAPHICAL) {
+            if (personnelTabView == PersonnelTabView.BIOGRAPHY) {
                 assertTrue(personnelTabView.isBiographical());
             } else {
                 assertFalse(personnelTabView.isBiographical());
