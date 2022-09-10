@@ -26,6 +26,8 @@ import mekhq.gui.*;
 import java.awt.event.KeyEvent;
 import java.util.ResourceBundle;
 
+//Currently just a copy of the Infirmary, as it is the most similar to how I imagine this will work
+
 /**
  * Identifies the standard tabs and provides a creation method.
  * The mnemonics used in this are included in the list at {@link CampaignGUI#initMenu()}, and they
@@ -43,6 +45,7 @@ public enum MHQTabType {
     WAREHOUSE("MHQTabType.WAREHOUSE.text", KeyEvent.VK_W),
     REPAIR_BAY("MHQTabType.REPAIR_BAY.text", KeyEvent.VK_R),
     INFIRMARY("MHQTabType.INFIRMARY.text", KeyEvent.VK_I),
+    RECROOM("MHQTabType.RECROOM.text", KeyEvent.VK_C),
     FINANCES("MHQTabType.FINANCES.text", KeyEvent.VK_N),
     MEK_LAB("MHQTabType.MEK_LAB.text", KeyEvent.VK_L),
     STRAT_CON("MHQTabType.STRAT_CON.text", KeyEvent.VK_C);
@@ -105,6 +108,10 @@ public enum MHQTabType {
         return this == INFIRMARY;
     }
 
+    public boolean isRecRoom() {
+        return this == RECROOM;
+    }
+
     public boolean isFinances() {
         return this == FINANCES;
     }
@@ -138,6 +145,8 @@ public enum MHQTabType {
                 return new RepairTab(gui, toString());
             case INFIRMARY:
                 return new InfirmaryTab(gui, toString());
+            case RECROOM:
+                return new RecRoomTab(gui, toString());
             case FINANCES:
                 return new FinancesTab(gui, toString());
             case MEK_LAB:

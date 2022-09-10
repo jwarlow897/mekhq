@@ -249,6 +249,7 @@ public class CampaignGUI extends JPanel {
         addStandardTab(MHQTabType.WAREHOUSE);
         addStandardTab(MHQTabType.REPAIR_BAY);
         addStandardTab(MHQTabType.INFIRMARY);
+        addStandardTab(MHQTabType.RECROOM);
         addStandardTab(MHQTabType.MEK_LAB);
         addStandardTab(MHQTabType.FINANCES);
 

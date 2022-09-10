@@ -149,6 +149,17 @@ public class MHQTabTypeTest {
     }
 
     @Test
+    public void isRecRoom() {
+        for (final MHQTabType mhqTabType : types) {
+            if (mhqTabType == MHQTabType.RECROOM) {
+                assertTrue(mhqTabType.isRecRoom());
+            } else {
+                assertFalse(mhqTabType.isRecRoom());
+            }
+        }
+    }
+
+    @Test
     public void testIsFinances() {
         for (final MHQTabType mhqTabType : types) {
             if (mhqTabType == MHQTabType.FINANCES) {
