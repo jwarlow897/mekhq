@@ -74,7 +74,7 @@ public final class RecRoomTab extends CampaignGuiTab {
 
         setLayout(new GridBagLayout());
 
-        String bgImageFile = getIconPackage().getGuiElement("infirmary_background");
+        String bgImageFile = getIconPackage().getGuiElement("recroom_background");
         if (null != bgImageFile && !bgImageFile.isEmpty()) {
             bgImage = Toolkit.getDefaultToolkit().createImage(bgImageFile);
         }
