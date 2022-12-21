@@ -28,6 +28,7 @@ import mekhq.campaign.event.PersonMedicalAssignmentEvent;
 import mekhq.campaign.event.ScenarioResolvedEvent;
 import mekhq.campaign.personnel.Person;
 import mekhq.gui.enums.MHQTabType;
+import mekhq.gui.model.AmusementTableModel;
 import mekhq.gui.model.DocTableModel;
 import mekhq.gui.model.PatientTableModel;
 import mekhq.gui.sorter.PersonTitleSorter;
@@ -50,7 +51,7 @@ public final class RecRoomTab extends CampaignGuiTab {
 
     private PatientTableModel assignedPatientModel;
     private PatientTableModel unassignedPatientModel;
-    private DocTableModel doctorsModel;
+    private AmusementTableModel amusementModel;
 
     private Image bgImage;
 
@@ -79,10 +80,10 @@ public final class RecRoomTab extends CampaignGuiTab {
             bgImage = Toolkit.getDefaultToolkit().createImage(bgImageFile);
         }
 
-        doctorsModel = new DocTableModel(getCampaign());
-        docTable = new JTable(doctorsModel);
+        amusementModel = new AmusementTableModel(getCampaign());
+        docTable = new JTable(amusementModel);
         docTable.setRowHeight(60);
-        docTable.getColumnModel().getColumn(0).setCellRenderer(doctorsModel.getRenderer());
+        docTable.getColumnModel().getColumn(0).setCellRenderer(amusementModel.getRenderer());
         docTable.getSelectionModel().addListSelectionListener(ev -> docTableValueChanged());
         docTable.setOpaque(false);
         JScrollPane scrollDocTable = new JScrollPane(docTable);
@@ -211,7 +212,7 @@ public final class RecRoomTab extends CampaignGuiTab {
         if (row < 0) {
             return null;
         }
-        return doctorsModel.getDoctorAt(docTable.convertRowIndexToModel(row));
+        return amusementModel.getDoctorAt(docTable.convertRowIndexToModel(row));
     }
 
     private ArrayList<Person> getSelectedAssignedPatients() {
@@ -310,7 +311,7 @@ public final class RecRoomTab extends CampaignGuiTab {
         final int selected = docTable.getSelectedRow();
         final List<Person> doctors = getCampaign().getDoctors();
         doctors.sort(new PersonTitleSorter().reversed());
-        doctorsModel.setData(doctors);
+        amusementModel.setData(doctors);
         if ((selected > -1) && (selected < doctors.size())) {
             docTable.setRowSelectionInterval(selected, selected);
         }
